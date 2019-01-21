@@ -47,7 +47,7 @@ public class StaffService {
         .getResultList();
 
     if (results.isEmpty()) {
-      return "\n->Empty: " + strId;
+      return "\n====>: Empty: " + strId;
     } else {
       int i = 0; int j=0;
       String jStr = "\n[\n{\n" +

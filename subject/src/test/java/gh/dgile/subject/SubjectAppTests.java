@@ -5,6 +5,12 @@ import gh.dgile.subject.contact.ContactTypeRepository;
 import gh.dgile.subject.subject.Subject;
 import gh.dgile.subject.subject.SubjectRepository;
 import lombok.extern.log4j.Log4j2;
+
+import java.util.List;
+import java.util.stream.Stream;
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,10 +19,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
-import java.util.List;
-import java.util.stream.Stream;
 
 @SuppressWarnings("JpaQlInspection")
 @Log4j2
@@ -36,18 +38,18 @@ public class SubjectAppTests {
 
   @Test
   public void csv_test() {
-    log.info("\n->csv_test: {}", "csv_test");
+    log.info("\n====>: csv_test: {}", "csv_test");
   }
 
   @Test
   public void recycleBin_test() {
 
-    log.info("\n->--------------");
+    log.info("\n====>: --------------");
     for (Subject subject : staffRepository.recycleBin()) {
-      log.info("\n->recycleBin_test: {}", subject.toString());
+      log.info("\n====>: recycleBin_test: {}", subject.toString());
     }
-    log.info("\n->recycleBinTestSize: {}", staffRepository.recycleBin().size());
-    log.info("\n->--------------");
+    log.info("\n====>: recycleBinTestSize: {}", staffRepository.recycleBin().size());
+    log.info("\n====>: --------------");
   }
 
   @Test
@@ -57,7 +59,7 @@ public class SubjectAppTests {
     for (Subject staff : staffRepository.findAll()) {
       if (i <= 20) {
         log.info(
-          "\n->" + i + ".) findContactTypesBySubjectId: {}",
+          "\n====>: " + i + ".) findContactTypesBySubjectId: {}",
           contactTypeRepository.findContactTypesBySubjectId(staff));
         i++;
       }
@@ -67,7 +69,7 @@ public class SubjectAppTests {
   @Test
   public void emFindContactTypeById_test() {
     ContactType ct = em.find(ContactType.class, 1L);
-    log.info("\n->ct: {}", ct);
+    log.info("\n====>: ct: {}", ct);
   }
 
   @Before
@@ -107,7 +109,7 @@ public class SubjectAppTests {
           .getResultList();
 
       if (results.isEmpty()) {
-        log.info("\n->Empty-strId: {}", id);
+        log.info("\n====>: Empty-strId: {}", id);
       } else {
         int i = 0;
         int j = 0;
@@ -123,7 +125,7 @@ public class SubjectAppTests {
           jStr = jStr.concat(",\n\t\"Type" + (i + 1) + "\": \"" + results.get(i)[j] + "\"");
         }
         jStr = jStr.concat("\n\t}\n}\n]");
-        log.info("\n->jStr: {}", jStr);
+        log.info("\n====>: jStr: {}", jStr);
       }
     }
   }
@@ -132,6 +134,6 @@ public class SubjectAppTests {
   public void streamOf_test() {
     Stream.of(
       "a", "b", "c", "d", "e", "f"
-    ).forEach(o -> log.info("\n->o: {}", o));
+    ).forEach(o -> log.info("\n====>: o: {}", o));
   }
 }

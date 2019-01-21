@@ -25,11 +25,11 @@ public class SubjectCommandLineRunner implements CommandLineRunner {
   @Override
   public void run(String... strings) {
 
-    log.info("\n->: \t\t\t{}", "-------------------");
-    log.info("\n->Port:\t\t\t\t\t\t{}", this.port);
-    log.info("\n->subjectSeederLineCount:\t{}", this.subjectSeeder.SubjectSeed());
-    log.info("\n->contactTypeSeeder:\t\t{}", this.contactTypeSeeder.contactTypeSeed());
-    log.info("\n->: \t\t\t{}", "-------------------");
+    log.info("\n====>: \t\t\t{}", "-------------------");
+    log.info("\n====>: Port:\t\t\t\t\t\t{}", this.port);
+    log.info("\n====>: subjectSeederLineCount:\t{}", this.subjectSeeder.SubjectSeed());
+    log.info("\n====>: contactTypeSeeder:\t\t{}", this.contactTypeSeeder.contactTypeSeed());
+    log.info("\n====>: \t\t\t{}", "-------------------");
 
   }
 

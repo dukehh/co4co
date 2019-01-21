@@ -71,7 +71,7 @@ public class ContactTypeSeeder {
           break;
       }
     }
-    log.info("\n->Verteilung CTS: {}", arr);
+    log.info("\n====>: Verteilung CTS: {}", arr);
 
     return contactTypeRepository.saveAll(cts).size();
   }

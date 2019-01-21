@@ -2,6 +2,7 @@ package gh.dgile.address;
 
 import gh.dgile.address.seeder.AddressSeeder;
 import lombok.extern.log4j.Log4j2;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -25,12 +26,13 @@ public class AddressCommandLineRunner implements CommandLineRunner {
   @Override
   public void run(String... args) {
 
-    log.info("\n->: {}", "--------------------");
-    log.info("\n->addressSeederLineCount: {}", this.addressSeeder.CsvSeed());
-    log.info("\n->Port: {}", this.port);
-    log.info("\n->: {}", "--------------------");
-    log.info("\n->address.default-recipients[0]: {}", defaultRecipients[0]);
-    log.info("\n->address.default-recipients[1]: {}", defaultRecipients[1]);
+    log.info("\n====>: {}", "--------------------");
+    log.info("\n====>: addressSeederLineCount: {}", this.addressSeeder.CsvSeed());
+    log.info("\n====>: Port: {}", this.port);
+    log.info("\n====>: {}", "--------------------");
+    for (int i = 0; i < 3; i++) {
+      log.info("\n====>: address.default-recipients[{}]: {}", i, defaultRecipients[i]);
+    }
   }
 
 }

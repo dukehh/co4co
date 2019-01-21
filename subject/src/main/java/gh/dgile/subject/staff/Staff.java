@@ -33,6 +33,6 @@ public class Staff extends Subject {
 
   @Override
   public String toString() {
-    return "\n->Staff{" + super.toString() + " " + getSalary() + "}";
+    return "\n====>: Staff{" + super.toString() + " " + getSalary() + "}";
   }
 }

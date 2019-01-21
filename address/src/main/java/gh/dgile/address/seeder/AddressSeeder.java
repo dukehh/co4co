@@ -56,7 +56,7 @@ public class AddressSeeder {
       }
       scanner.close();
 
-      log.info("\n->addressesCSV: {}", addressesCSV);
+      log.info("\n====>: addressesCSV: {}", addressesCSV);
       return addressRepository.saveAll(fileAddresses).size();
 
     } catch (IOException e) {
