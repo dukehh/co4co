@@ -1,0 +1,24 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-AddressApp<address>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "gh.dgile.address.AddressApp",
+      "projectName": "address",
+      "args": ""
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-SubjectApp<subject>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "gh.dgile.subject.SubjectApp",
+      "projectName": "subject",
+      "args": ""
+    }
+  ]
+}
