@@ -3,6 +3,8 @@ package gh.dgile.address.seeder;
 import gh.dgile.address.entity.Address;
 import gh.dgile.address.repository.AddressRepository;
 import lombok.extern.log4j.Log4j2;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -26,12 +28,9 @@ public class AddressSeeder {
 
   @Value("${address.has-title}")
   private boolean addressesHasTitle;
-
-  private final AddressRepository addressRepository;
-
-  public AddressSeeder(AddressRepository addressRepository) {
-    this.addressRepository = addressRepository;
-  }
+  
+  @Autowired
+  private  AddressRepository addressRepository;
 
   public int CsvSeed() {
 
